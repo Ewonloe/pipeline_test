@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Lint') {
             steps {
-                sh 'curl --user carlos.henriquez.r:secret -X POST -F "jenkinsfile=<Jenkinsfile" http://localhost:8080/pipeline-model-converter/validate'
+                sh 'usr/bin/curl --user carlos.henriquez.r:secret -X POST -F "jenkinsfile=<Jenkinsfile" http://localhost:8080/pipeline-model-converter/validate'
             }
         }
 

@@ -16,14 +16,15 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'sudo ./test.sh'
+                sh "chmod +x -R ${env.WORKSPACE}"
+                sh './test.sh'
             }
         }
         stage('Deliver') {
             steps {
-                sh 'sudo ./deliver.sh'
+                sh './deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sh 'sudo ./kill.sh'
+                sh './kill.sh'
             }
         }
     }

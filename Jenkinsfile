@@ -9,18 +9,16 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Lint') {
-            steps {
-                sh 'usr/bin/curl --user carlos.henriquez.r:secret -X POST -F "jenkinsfile=<Jenkinsfile" http://localhost:8080/pipeline-model-converter/validate'
-            }
-        }
-
         stage('Build') {
             steps {
+                sh 'npm install eslint --save-dev'
                 sh 'npm install'
             }
         }
 
+        stage('Lint') {
+            sh 'npm run lint'
+        }
         
         stage('Test') {
             steps {

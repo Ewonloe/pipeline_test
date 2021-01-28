@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                sh 'npm uninstall eslint'
+                sh 'npm uninstall eslint && npm install eslint@5.16.0'
             }
         }
         

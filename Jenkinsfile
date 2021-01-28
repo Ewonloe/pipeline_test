@@ -12,14 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-
-            }
-        }
-        
-        stage('Purge'){
-            steps {
                 sh 'npm uninstall eslint'
-
             }
         }
         

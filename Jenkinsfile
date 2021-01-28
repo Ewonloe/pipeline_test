@@ -11,14 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install eslint --save-dev'
                 sh 'npm install'
-            }
-        }
-
-        stage('Lint') {
-            steps {
-                sh 'npm run lint'
             }
         }
         
